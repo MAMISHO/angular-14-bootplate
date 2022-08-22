@@ -14,21 +14,15 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   public register(user: User): Observable<User> {
-    return this.http
-      .post<User>(this.registerUserURI, user)
-      .pipe(catchError(this.error));
+    return this.http.post<User>(this.registerUserURI, user).pipe(catchError(this.error));
   }
 
   public login(request: RequestLogin): Observable<ResponseLogin> {
-    return this.http
-      .post<ResponseLogin>(this.loginUserURI, request)
-      .pipe(catchError(this.error));
+    return this.http.post<ResponseLogin>(this.loginUserURI, request).pipe(catchError(this.error));
   }
 
   public logout(user: User): Observable<User> {
-    return this.http
-      .post<User>(this.registerUserURI, user)
-      .pipe(catchError(this.error));
+    return this.http.post<User>(this.registerUserURI, user).pipe(catchError(this.error));
   }
 
   private error(error: HttpErrorResponse) {
