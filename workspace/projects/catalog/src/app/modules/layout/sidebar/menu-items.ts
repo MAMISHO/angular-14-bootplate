@@ -1,22 +1,30 @@
-import { RouteInfo } from "./sidebar.metadata";
+import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/devices",
-    title: "Dispositivos",
-    icon: "mdi mdi-dots-horizontal",
-    class: "nav-small-cap",
+    path: '/products',
+    title: 'Catálogo',
+    icon: 'mdi mdi-dots-horizontal',
+    class: 'nav-small-cap',
     extralink: true,
-    submenu: [],
+    submenu: []
   },
   {
-    path: "/devices",
-    title: "Drones",
-    icon: "mdi mdi-gauge",
-    class: "",
+    path: '/products',
+    title: 'Productos',
+    icon: 'mdi mdi-gauge',
+    class: '',
     extralink: false,
-    submenu: [],
-  }/*,
+    submenu: []
+  },
+  {
+    path: '/products/upload',
+    title: 'Cargar catálogo',
+    icon: 'mdi mdi-gauge',
+    class: '',
+    extralink: false,
+    submenu: []
+  } /*,
   {
     path: "",
     title: "UI Components",

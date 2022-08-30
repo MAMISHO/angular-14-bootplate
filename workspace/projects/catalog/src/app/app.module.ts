@@ -1,16 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+// import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthInterceptor } from './modules/auth/auth.interceptor';
-import { LoginComponent } from './modules/auth/login/login.component';
-import { RegisterComponent } from './modules/auth/register/register.component';
+import { AuthModule } from './modules/auth/auth.module';
+import { LoginComponent } from './modules/auth/pages/login/login.component';
+import { RegisterComponent } from './modules/auth/pages/register/register.component';
 import { DevicesListComponent } from './modules/components/device/devices-list/devices-list.component';
 import { DevicesComponent } from './modules/components/device/devices/devices.component';
 import { BreadcrumbComponent } from './modules/layout/breadcrumb/breadcrumb.component';
@@ -19,7 +20,7 @@ import { NavigationComponent } from './modules/layout/nav/navigation.component';
 import { SidebarComponent } from './modules/layout/sidebar/sidebar.component';
 import { DashboardComponent } from './modules/pages/dashboard/dashboard.component';
 import { NopagefoundComponent } from './modules/pages/nopagefound/nopagefound.component';
-import { UserDevicesComponent } from './modules/pages/user-devices/user-devices.component';
+import { UserDevicesComponent } from './modules/users/pages/user-management/user-devices.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { UserDevicesComponent } from './modules/pages/user-devices/user-devices.
     NopagefoundComponent,
     DevicesComponent,
     DevicesListComponent,
-    UserDevicesComponent,
+    UserDevicesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,14 +44,16 @@ import { UserDevicesComponent } from './modules/pages/user-devices/user-devices.
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    // PerfectScrollbarModule
     NgbModule,
+    AuthModule,
+    PerfectScrollbarModule
   ],
   providers: [
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    JwtHelperService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    /*{
+    // AuthService,
+    // { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    // JwtHelperService,
+    // { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    /* {
       provide: APOLLO_OPTIONS,
       useFactory: (httpLink: HttpLink) => {
         return {
@@ -63,8 +66,8 @@ import { UserDevicesComponent } from './modules/pages/user-devices/user-devices.
         };
       },
       deps: [HttpLink],
-    },*/
+    }, */
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

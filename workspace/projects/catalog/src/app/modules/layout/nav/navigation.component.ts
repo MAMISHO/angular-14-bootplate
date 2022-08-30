@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
-//declare var $: any;
+import { AuthService } from '../../auth/services/auth.service';
+// declare var $: any;
 
 @Component({
   selector: 'app-navigation',

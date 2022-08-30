@@ -1,16 +1,46 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jasmine": true
   },
-  "extends": ["standard"],
+  "extends": ["plugin:@typescript-eslint/eslint-recommended", "standard", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "semi": [2, "always"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never"
+      }
+    ],
+    // indent: ['error', 2, { SwitchCase: 1 }],
+    "no-useless-constructor": 0,
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "never"
+      }
+    ],
+    "no-array-constructor": "off",
+    "@typescript-eslint/no-array-constructor": ["error"],
+    "dot-notation": "off"
+  }
+  /* "rules": {
     "semi": [2, "always"],
     // "space-before-function-paren": ["error", "never"],
     "comma-dangle": [
@@ -33,5 +63,5 @@
         "asyncArrow": "never"
       }
     ]
-  }
+  }*/
 }

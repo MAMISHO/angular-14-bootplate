@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Device } from '../../../api/models/device.model';
-import { DeviceService } from '../../../api/services/device.service';
+import { Device } from '../../../users/api/models/device.model';
 
 @Component({
   selector: 'devices-list',
@@ -8,13 +7,9 @@ import { DeviceService } from '../../../api/services/device.service';
   styleUrls: ['./devices-list.component.css']
 })
 export class DevicesListComponent implements OnInit {
-
   @Input() devices: Device[] = [];
 
-  constructor(
-  ) { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

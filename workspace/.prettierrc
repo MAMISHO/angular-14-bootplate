@@ -2,5 +2,25 @@
   "tabWidth": 2,
   "useTabs": false,
   "singleQuote": true,
-  "printWidth": 140
+  "printWidth": 140,
+  "trailingComma": "none",
+  "comma-dangle": [
+    false,
+    {
+      "arrays": "never",
+      "objects": "never",
+      "imports": "always-multiline",
+      "exports": "never",
+      "functions": "never"
+    }
+  ],
+  "bracketSameLine": true,
+  "space-before-function-paren": [
+    "error",
+    {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "never"
+    }
+  ]
 }

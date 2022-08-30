@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title"><span class="lstick"></span>Projects of the Month</h4>
+    <div class="table-responsive">
+      <table class="table vm no-th-brd pro-of-month mb-0 v-middle">
+        <thead>
+          <tr>
+            <th colspan="2">Assigned</th>
+            <th>Name</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              <span class="{{ product.class }}">
+                <!-- <img [src]="product." alt="user" width="50" /> -->
+              </span>
+            </td>
+            <td>
+              <h6 class="mb-0">{{ product.denomination }}</h6>
+              <small class="text-muted">{{ product.code }}</small>
+            </td>
+            <td>{{ product.class }}</td>
+            <td>{{ product.nationalCode }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

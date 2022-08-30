@@ -1,0 +1,37 @@
+<span>Productos carga</span>
+<br />
+<label class="form-label" for="customFile">Cargar catálogo</label>
+<!-- <input type="file" class="form-control" id="customFile" /> -->
+<form [formGroup]="uploadForm" (ngSubmit)="confirmUploadFile()" novalidate class="col-12">
+  <div class="form-group">
+    <div class="input-group">
+      <label class="btn btn-outline-secondary py-0">
+        <span class="far fa-folder-open fa-2x mt-1"></span>
+        <input
+          hidden
+          type="file"
+          class="form-control"
+          name="fileInput"
+          type="file"
+          accept=".csv"
+          (change)="setFileData($event, 'content', false)" />
+        <!-- <input hidden #fileInput name="inputFile" type="file" accept=".xls,.xlsx" (change)="setFileData($event, 'content', false)" /> -->
+      </label>
+      <input name="fileName" [(ngModel)]="uploadFile.fileName" required formControlName="fileName" class="form-control" placeholder="" />
+      <select
+        class="form-control custom-select input-group-select-auto"
+        name="field-dosageType"
+        id="dosageType"
+        formControlName="uploadType">
+        <!-- <option [ngValue]="undefined">{{'cpmp.common.select' | translate}}</option> -->
+        <option value="">Seleccionar</option>
+        <option value="PRODUCTS" selected>Productos</option>
+        <option value="LABORATORIES">Laboratorios</option>
+        <option value="CATEGORIES" selected>Categorias</option>
+      </select>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" [disabled]="!canUpload()">Cargar fichero</button>
+      </span>
+    </div>
+  </div>
+</form>

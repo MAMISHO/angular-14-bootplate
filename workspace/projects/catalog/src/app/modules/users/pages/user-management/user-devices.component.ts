@@ -13,9 +13,7 @@ export class UserDevicesComponent implements OnInit {
   constructor(private deviceService: DeviceService) {}
 
   async ngOnInit() {
-    this.deviceService
-      .findAll()
-      .subscribe((devices: Device[]) => (this.devices = devices));
+    this.deviceService.findAll().subscribe((devices: Device[]) => (this.devices = devices));
     // this.devices = await this.deviceService.getByCurrentUser();
   }
 }

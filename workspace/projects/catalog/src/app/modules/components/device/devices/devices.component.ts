@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Device } from '../../../api/models/device.model';
+import { Device } from '../../../users/api/models/device.model';
 
 @Component({
   selector: 'devices',

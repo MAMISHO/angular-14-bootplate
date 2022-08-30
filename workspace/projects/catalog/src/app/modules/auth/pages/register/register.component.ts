@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../api/models/user.model';
-import { ApiService } from '../../api/services/api.service';
+import { User } from '../../../users/api/models/user.model';
+import { ApiService } from '../../../users/api/services/api.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-
   user: User;
 
-  constructor(
-    private apiService: ApiService
-  ) {
+  constructor(private apiService: ApiService) {
     this.user = new User();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   public async registerUser() {
     // Validar campos
     console.log(this.user);
