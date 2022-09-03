@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ImportService } from '../api/import.service';
+import { LoadProcessDTO } from '../models/dtos/load-process.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { ImportService } from '../api/import.service';
 export class LoaderFileService {
   constructor(private importService: ImportService) {}
 
-  public loadProductsFile(form: FormGroup): Observable<Boolean> {
+  public loadProductsFile(form: FormGroup): Observable<LoadProcessDTO> {
     const formData = new FormData();
     // formData.append('file', form.get('profile').value);
     for (let i in form.controls) {
